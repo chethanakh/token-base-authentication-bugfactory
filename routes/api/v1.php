@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\V1\PostController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,4 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+    return response('Welcome API v1', 200);
+});
 
+Route::get('/post', [PostController::class,'index']);
