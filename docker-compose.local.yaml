@@ -10,7 +10,7 @@ services:
       - ./:/var/www/html
       - ./docker-configs/nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
   tba-mysql:
-    image: mysql:8.0.24
+    image: mysql:5.7
     user: "${UID}:${GID}"
     container_name: tba-mysql
     environment:
@@ -18,7 +18,7 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - ./docker-configs/mysql:/var/lib/mysql/
+      - ./docker-configs/sys/:/var/lib/mysql/
   phpmyadmin:
     depends_on:
       - tba-mysql
