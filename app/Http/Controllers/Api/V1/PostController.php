@@ -13,4 +13,19 @@ class PostController extends Controller
         $post = Post::all();
         return response($post, 200);
     }
+
+    public function create(Request $request)
+    {
+        try {
+            $post = new Post();
+            $post->title = $request->title;
+            $post->description = $request->description;
+            $post->author = $request->author;
+            $post->save();
+
+            return response($post, 200);
+        } catch (\Throwable $th) {
+            return response($th->getTrace(), $th->getCode());
+        }
+    }
 }

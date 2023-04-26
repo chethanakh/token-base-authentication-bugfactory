@@ -19,4 +19,5 @@ Route::get('/', function () {
     return response('Welcome API v1', 200);
 });
 
-Route::get('/post', [PostController::class,'index']);
+Route::get('/post', [PostController::class,'index'])->middleware('verify-token');
+Route::post('/post', [PostController::class,'create'])->middleware('verify-token');

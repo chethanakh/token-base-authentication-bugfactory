@@ -2,6 +2,8 @@
 
 return [
 
+    'self-api-key' => env("SELF_API_KEY",""),
+
     /*
     |--------------------------------------------------------------------------
     | Authentication Defaults
