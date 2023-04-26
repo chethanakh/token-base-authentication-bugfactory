@@ -9,7 +9,7 @@ export UID
 export GID
 
 shell:
-	docker-compose -f docker-compose.local.yaml exec -u ${UID}:${GID} tba-app sh
+	docker-compose -f docker-compose.local.yaml exec -u ${UID}:${GID} token-auth-app sh
 
 up:
 	UID=${UID} GID=${GID} docker-compose -f docker-compose.local.yaml up --build -d --remove-orphans

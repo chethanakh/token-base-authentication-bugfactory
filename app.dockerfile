@@ -15,6 +15,6 @@ RUN apk --update add shadow
 RUN apk --update add sudo
 RUN docker-php-ext-install pdo_mysql
 
-RUN addgroup -g ${UID} tba-user && adduser -G tba-user -g tba-user -s /bin/sh -D tba-user
+RUN addgroup -g ${UID} token-auth-user && adduser -G token-auth-user -g token-auth-user -s /bin/sh -D token-auth-user
 
-USER tba-user
+USER token-auth-user
