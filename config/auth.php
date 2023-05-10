@@ -2,7 +2,7 @@
 
 return [
 
-    'self-api-key' => env("SELF_API_KEY",""),
+    'self-api-key' => env("SELF_API_KEY", ""),
 
     /*
     |--------------------------------------------------------------------------
@@ -113,5 +113,7 @@ return [
     */
 
     'password_timeout' => 10800,
+
+    'jwt_secret' => env("JWT_SECRET", ""),
 
 ];

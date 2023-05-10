@@ -23,4 +23,6 @@ Route::get('/post', [PostController::class,'index'])->middleware('verify-token')
 Route::post('/post', [PostController::class,'create'])->middleware('verify-token');
 
 Route::post('/login', [AuthController::class,'login']);
-Route::get('/user', [AuthController::class,'user'])->middleware(['auth:sanctum','abilities:user-read']);
+Route::get('/user', [AuthController::class,'user'])->middleware(["validate-jwt"]);
+Route::get('/encode', [AuthController::class,'encode'])->middleware([]);
+Route::get('/decode', [AuthController::class,'decode'])->middleware([]);
