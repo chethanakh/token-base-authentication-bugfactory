@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\Api\V1\AuthController;
 use App\Http\Controllers\Api\V1\PostController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,3 +21,6 @@ Route::get('/', function () {
 
 Route::get('/post', [PostController::class,'index'])->middleware('verify-token');
 Route::post('/post', [PostController::class,'create'])->middleware('verify-token');
+
+Route::post('/login', [AuthController::class,'login']);
+Route::get('/user', [AuthController::class,'user'])->middleware(['auth:sanctum','abilities:user-read']);
